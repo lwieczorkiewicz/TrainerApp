@@ -1,0 +1,8 @@
+.idea
+/target
+HELP.md
+mvnw
+mvnw.cmd
+pom.xml
+Trainer.iml
+
