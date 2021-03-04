@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Tytuł strony</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css" th:href="@{style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 </head>
 <body>
@@ -30,6 +31,37 @@
     <div class="container">
         <h2>Dodaj Trenera</h2>
     </div>
+    <div class="trainerForm">
+
+        <div>
+            <form action="#" th:action="@{/addTrainer}" th:object="${trainer}" method="post">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Name
+                    <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="lukas"></label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Last name
+                    <input type="lastName" class="form-control" id="exampleFormControlInput2" placeholder="wieczorkiewicz"></label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address
+                    <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com"></label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Phone number
+                    <input type="phoneNumber" class="form-control" id="exampleFormControlInput4" placeholder="123 123 123"></label>
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Add Trainer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </section>
 
 <footer class="footer">

@@ -5,12 +5,9 @@ import com.example.app.dto.TrainersDto;
 import com.example.app.repositories.TrainersRepositories;
 import com.example.app.users.Trainers;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -18,6 +15,7 @@ public class TrainersService {
 
     private final TrainersDao trainersDao;
     private final TrainersRepositories trainersRepositories;
+
 
     @Transactional
     public TrainersDto saveTrainers(TrainersDto trainersDto){
@@ -30,6 +28,5 @@ public class TrainersService {
         return  new TrainersDto(savedTrainers.getId(), savedTrainers.getName(), savedTrainers.getLastName(),
                 savedTrainers.getEmail(), savedTrainers.getPhoneNumber());
     }
-
 
 }
