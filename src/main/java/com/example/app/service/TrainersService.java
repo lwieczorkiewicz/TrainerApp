@@ -5,16 +5,20 @@ import com.example.app.dto.TrainersDto;
 import com.example.app.repositories.TrainersRepositories;
 import com.example.app.users.Trainers;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class TrainersService {
+public class TrainersService implements TrainerService{
 
     private final TrainersDao trainersDao;
-    private final TrainersRepositories trainersRepositories;
+
+    @Autowired
+    private TrainersRepositories trainersRepositories;
 
 
     @Transactional
@@ -29,4 +33,8 @@ public class TrainersService {
                 savedTrainers.getEmail(), savedTrainers.getPhoneNumber());
     }
 
+    @Override
+    public List<Trainers> getAllTrainers() {
+        return trainersRepositories.findAll();
+    }
 }

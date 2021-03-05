@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h3>Zadanie07 - formularz</h3>
+
+<form th:action="@{/addTrainer}" th:object="${trainers}" method="post">
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" th:field="*{name}" ></td>
+
+        </tr>
+
+        <tr>
+            <td>Last name: </td>
+            <td><input type="text" th:field="*{lastName}" ></td>
+
+        </tr>
+
+        <tr>
+            <td>Email: </td>
+            <td><input type="text" th:field="*{email}" ></td>
+            <td><span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> </span></td>
+        </tr>
+
+        <tr>
+            <td>Phone number: </td>
+            <td><input type="number" th:field="*{phoneNumber}" ></td>
+
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Wyslij"></td>
+        </tr>
+    </table>
+</form>
+
+
+
+</body>
+</html>

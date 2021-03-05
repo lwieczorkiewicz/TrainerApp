@@ -1,28 +1,36 @@
 package com.example.app.controller;
 
-import com.example.app.dto.TrainersDto;
-import com.example.app.repositories.TrainersRepositories;
 import com.example.app.service.TrainersService;
-import com.example.app.users.Trainers;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 @RequiredArgsConstructor
 public class TrainerController {
 
+    @Autowired
     private final TrainersService trainersService;
-    private final TrainersRepositories trainersRepositories;
 
-    @PostMapping("/trainers")
+    // displays list of trainers
+    @GetMapping("/allTrainers")
+    public String showHomePage(Model model){
+        model.addAttribute("listTrainers", trainersService.getAllTrainers());
+        return "allTrainers";
+    }
+
+
+
+
+
+
+
+
+
+
+  /*  @PostMapping("/trainers")
     public TrainersDto saveTrainers(@RequestBody TrainersDto trainersDto) {
 
         return trainersService.saveTrainers(trainersDto);
@@ -39,9 +47,35 @@ public class TrainerController {
     }
 
     @GetMapping("/allTrainers")
-    public String main2(){
+    public String main2(Model model){
+        model.addAttribute("trainers", new Trainers());
         return "allTrainers";
     }
+
+    @GetMapping("/zadanie07")
+    public String main(Model model){
+        model.addAttribute("student", new Student());
+        return "zadanie07/index";
+    }
+
+
+
+    @PostMapping("addTrainer")
+    public String save(@Valid Trainers trainers, BindingResult result){
+        System.out.println(trainers);
+
+        if (result.hasErrors()){
+            return "addTrainer";
+        }
+
+        return "thanks";
+    }
+
+
+
+
+
+
 
     @GetMapping("/contact")
     public String main3(){
@@ -54,7 +88,7 @@ public class TrainerController {
     }
 
 
-  /*  @GetMapping("/addTrainer1")
+    @GetMapping("/addTrainer1")
     public String showTrainerForm(Trainers trainers) {
         return "add-user";
     }
@@ -73,9 +107,9 @@ public class TrainerController {
     public String showTrainersList(Model model) {
         model.addAttribute("trainers", trainersRepositories.findAll());
         return "index";
-    }*/
+    }
 
-  /*  @GetMapping("/edit/{id}")
+    @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
@@ -102,8 +136,8 @@ public class TrainerController {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         userRepository.delete(user);
         return "redirect:/index";
-    }*/
-
+    }
+*/
 
 
 

@@ -60,6 +60,8 @@ body {
 				}
 
 .section {
+    margin-left: 200px;
+    margin-right: 200px;
 	padding: 70px 0;
 	text-align: justify;
 }
@@ -72,6 +74,15 @@ body {
 		margin-top: 30px;
 	}
 
+.trainerForm {
+
+       max-width: 1000px;
+       	margin-left: auto;
+       	margin-right: auto;
+       	padding-left: 15px;
+       	padding-right: 15px;
+}
+
 .footer {
 	padding: 10px;
 	line-height: 50px;
@@ -81,14 +92,5 @@ body {
 	background: #20B2AA;
 }
 
-.trainerForm {
-
-       max-width: 1000px;
-       	margin-left: auto;
-       	margin-right: auto;
-       	padding-left: 15px;
-       	padding-right: 15px;
 
 
-
-}

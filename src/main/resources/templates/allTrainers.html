@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Tytuł strony</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css" th:href="@{style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 </head>
 <body>
@@ -25,11 +26,34 @@
         </ul>
     </div>
 </nav>
-<section class="section" id="o-mnie">
-    <div class="container">
+<section class="section" id="o-mnie" >
+    <div class="container" align="center">
         <h2>Lista wszystkich trenerów infoShare</h2>
     </div>
-    <div>
+    <div align="center" class="container my-3">
+
+        <table class="table table-striped table-hover" >
+            <thead align="center">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody align="center">
+                <tr th:each="trainers : ${listTrainers}">
+                    <td th:text="${trainers.name}"/>
+                    <td th:text="${trainers.lastName}"/>
+                    <td th:text="${trainers.email}"/>
+                    <td th:text="${trainers.phoneNumber}"/>
+                </tr>
+
+            </tbody>
+
+
+        </table>
+
 
 
 
