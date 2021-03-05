@@ -1,11 +1,14 @@
 package com.example.app.controller;
 
 import com.example.app.service.TrainersService;
+import com.example.app.users.Trainers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequiredArgsConstructor
@@ -14,12 +17,35 @@ public class TrainerController {
     @Autowired
     private final TrainersService trainersService;
 
+    @GetMapping("/")
+    public String main(){
+        return "index";
+    }
+
     // displays list of trainers
+
     @GetMapping("/allTrainers")
     public String showHomePage(Model model){
         model.addAttribute("listTrainers", trainersService.getAllTrainers());
         return "allTrainers";
     }
+
+    @GetMapping("/saveTrainerForm")
+    public String saveTrainerForm(Model model) {
+
+        Trainers trainers = new Trainers();
+        model.addAttribute("trainers", trainers);
+        return "addTrainer";
+    }
+
+    @PostMapping("/saveTrainer")
+    public String saveTrainer(@ModelAttribute("trainers") Trainers trainers){
+
+        //save trainer to data base
+        trainersService.saveTrainer(trainers);
+        return "redirect:/allTrainers";
+    }
+
 
 
 

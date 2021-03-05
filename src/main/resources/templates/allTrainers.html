@@ -31,7 +31,9 @@
         <h2>Lista wszystkich trenerów infoShare</h2>
     </div>
     <div align="center" class="container my-3">
-
+        <div align="left">
+        <a th:href ="@{/saveTrainerForm}" class="btn btn-primary" > Dodaj Trenera </a>
+        </div>
         <table class="table table-striped table-hover" >
             <thead align="center">
                 <tr>
@@ -39,14 +41,16 @@
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Phone Number</th>
+                    <th>Update</th>
                 </tr>
             </thead>
             <tbody align="center">
-                <tr th:each="trainers : ${listTrainers}">
+                <td th:each="trainers : ${listTrainers}">
                     <td th:text="${trainers.name}"/>
                     <td th:text="${trainers.lastName}"/>
                     <td th:text="${trainers.email}"/>
                     <td th:text="${trainers.phoneNumber}"/>
+                    <td> <a th:href="@{/formUpdate/{id}(id=${trainers.id})}" class="btn btn-primary"> Update </a></td>
                 </tr>
 
             </tbody>
