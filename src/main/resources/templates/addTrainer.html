@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Tytuł strony</title>
+    <title>Trainers Infoshare</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css" th:href="@{style.css}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -17,10 +17,10 @@
 <nav class="nav">
     <div class="container">
         <ul>
+            <li><a th:href="@{/}">Main Page</a></li>
             <li><a th:href="@{/allTrainers}" >Trainers List</a></li>
             <li><a th:href="@{/addTrainerForm}">Add Trainer</a></li>
-            <li><a th:href="@{/updateTrainer}">Edytuj Trenera</a></li>
-            <li><a th:href="@{/contact}">Trenerzy</a></li>
+            <li><a th:href="@{/contact}">Contact</a></li>
         </ul>
     </div>
 </nav>

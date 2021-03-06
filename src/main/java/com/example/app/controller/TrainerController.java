@@ -8,7 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.UUID;
 
 @Controller
 @RequiredArgsConstructor
@@ -18,8 +21,13 @@ public class TrainerController {
     private final TrainersService trainersService;
 
     @GetMapping("/")
-    public String main(){
+    public String mainPage(){
         return "index";
+    }
+
+    @GetMapping("/contact")
+    public String contactPage(){
+        return "/contact";
     }
 
     // displays list of trainers
@@ -41,6 +49,16 @@ public class TrainerController {
         trainersService.saveTrainer(trainers);
         return "redirect:/allTrainers";
     }
+
+    @GetMapping("/updateForm/{id}")
+    public String updateForm(@PathVariable(value = "id") UUID id, Model model){
+        Trainers trainers = trainersService.getTrainersById(id);
+        model.addAttribute("trainers", trainers);
+        return "updateTrainer";
+
+    }
+
+
 
 
 
