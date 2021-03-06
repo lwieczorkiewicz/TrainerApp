@@ -1,4 +1,4 @@
-package com.example.app.users;
+package com.example.app.model;
 
 import lombok.Data;
 import org.hibernate.annotations.Type;
@@ -21,7 +21,7 @@ public class Trainers {
     private UUID id;
 
     @Column(name ="name", nullable = false)
-    private String name;
+    private String firstName;
 
     @Column(name ="last_name", nullable = false)
     private String lastName;
@@ -35,8 +35,8 @@ public class Trainers {
     public Trainers() {
     }
 
-    public Trainers(String name, String lastName, String email, int phoneNumber) {
-        this.name = name;
+    public Trainers(String firstName, String lastName, String email, int phoneNumber) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -50,12 +50,12 @@ public class Trainers {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {

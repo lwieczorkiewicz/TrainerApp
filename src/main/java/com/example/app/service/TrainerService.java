@@ -1,6 +1,6 @@
 package com.example.app.service;
 
-import com.example.app.users.Trainers;
+import com.example.app.model.Trainers;
 
 import java.util.List;
 
