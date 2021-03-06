@@ -17,9 +17,9 @@
 <nav class="nav">
     <div class="container">
         <ul>
+            <li><a th:href="@{/}">Main Page</a></li>
             <li><a th:href="@{/allTrainers}" >Trainers List</a></li>
             <li><a th:href="@{/addTrainerForm}">Add Trainer</a></li>
-            <li><a th:href="@{/updateTrainer444}">Update Trainer</a></li>
             <li><a th:href="@{/contact}">Contact</a></li>
         </ul>
     </div>
@@ -29,12 +29,12 @@
         <h2>Update Trainer</h2>
         <div class="trainerForm" align="left" >
 
-            <form action="#" th:action="@{/saveTrainer}" th:object="${trainers}" method="post">
-                <input type="hidden" th:field="*{id}" >
-                <input type="text" th:field = "*{firstName}" class="form-control">
-                <input type="text" th:field = "*{lastName}" class="form-control">
-                <input type="text" th:field = "*{email}" class="form-control">
-                <input type="number" th:field = "*{phoneNumber}" class="form-control">
+            <form action="#" th:action="@{/saveTrainer}" th:object="${trainers}" method="POST">
+                <input type="hidden" th:field="*{id}" />
+                <input type="text" th:field="*{firstName}" class="form-control">
+                <input type="text" th:field="*{lastName}" class="form-control">
+                <input type="text" th:field="*{email}" class="form-control">
+                <input type="number" th:field="*{phoneNumber}" class="form-control">
                 <button type="submit" class="btn btn-primary"> Update Trainer</button>
             </form>
         </div>
