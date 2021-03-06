@@ -1,6 +1,5 @@
 package com.example.app.service;
 
-import ch.qos.logback.core.pattern.parser.OptionTokenizer;
 import com.example.app.model.Trainers;
 import com.example.app.repositories.TrainersRepositories;
 import lombok.RequiredArgsConstructor;
@@ -42,17 +41,8 @@ public class TrainersService implements TrainerService {
         return trainers;
     }
 
-
-   /* @Transactional
-    public TrainersDto saveTrainers(TrainersDto trainersDto){
-
-        Trainers trainers = new Trainers(trainersDto.getName(), trainersDto.getLastName(),
-                trainersDto.getEmail(), trainersDto.getPhoneNumber());
-
-        Trainers savedTrainers = trainersRepositories.save(trainers);
-
-        return  new TrainersDto(savedTrainers.getId(), savedTrainers.getFirstName(), savedTrainers.getLastName(),
-                savedTrainers.getEmail(), savedTrainers.getPhoneNumber());
-    }*/
-
+    @Override
+    public void deleteTrainerById(UUID id) {
+        this.trainersRepositories.deleteById(id);
+    }
 }

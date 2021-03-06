@@ -17,19 +17,19 @@ public class Trainers {
 
     @Id
     @GeneratedValue
-    @Type(type="org.hibernate.type.UUIDCharType")
+    @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID id;
 
-    @Column(name ="name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String firstName;
 
-    @Column(name ="last_name", nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name ="email", nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name ="phone_number", nullable = false)
+    @Column(name = "phone_number", nullable = false)
     private int phoneNumber;
 
     public Trainers() {

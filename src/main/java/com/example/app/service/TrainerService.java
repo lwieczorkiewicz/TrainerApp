@@ -13,4 +13,5 @@ public interface TrainerService {
 
     Trainers getTrainersById(UUID id);
 
+    void deleteTrainerById(UUID id);
 }

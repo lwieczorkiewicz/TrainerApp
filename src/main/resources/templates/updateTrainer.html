@@ -30,7 +30,7 @@
         <div class="trainerForm" align="left" >
 
             <form action="#" th:action="@{/saveTrainer}" th:object="${trainers}" method="post">
-                <input type="hidden" th:field="*{id}" />
+                <input type="hidden" th:field="*{id}" >
                 <input type="text" th:field = "*{firstName}" class="form-control">
                 <input type="text" th:field = "*{lastName}" class="form-control">
                 <input type="text" th:field = "*{email}" class="form-control">
@@ -41,11 +41,11 @@
     </div>
 </section>
 
-<!--<footer class="footer">
+<footer class="footer">
     <div class="container">
         <p>&copy; infoShare</p>
     </div>
-</footer>-->
+</footer>
 
 </body>
 </html>

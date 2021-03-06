@@ -50,7 +50,10 @@
                 <td th:text="${trainers.lastName}"/>
                 <td th:text="${trainers.email}"/>
                 <td th:text="${trainers.phoneNumber}"/>
-                <td> <a th:href="@{/updateForm/{id}(id=${trainers.id})}" class="btn btn-primary">Update</a>  </td>
+                <td>
+                    <a th:href="@{/updateForm/{id}(id=${trainers.id})}" class="btn btn-warning">Update</a>
+                    <a th:href="@{/deleteTrainers/{id}(id=${trainers.id})}" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
 
             </tbody>
@@ -58,11 +61,11 @@
     </div>
 </section>
 
-<!--<footer class="footer">
+<footer class="footer">
     <div class="container">
         <p>&copy; infoShare</p>
     </div>
-</footer>-->
+</footer>
 
 </body>
 </html>
