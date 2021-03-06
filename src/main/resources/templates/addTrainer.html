@@ -19,8 +19,8 @@
     <div class="container">
         <ul>
 
-            <li><a th:href="@{/allTrainers}">Lista Trenerów</a></li>
-            <li><a th:href="@{/addTrainer}">Dodaj Trenera</a></li>
+            <li><a th:href="@{/allTrainers}" >Trainers List</a></li>
+            <li><a th:href="@{/addTrainerForm}">Add Trainer</a></li>
             <li><a th:href="@{/updateTrainer}">Edytuj Trenera</a></li>
             <li><a th:href="@{/contact}">Trenerzy</a></li>
 
@@ -30,81 +30,31 @@
 <section class="section" id="o-mnie">
     <div class="container">
         <h2>Dodaj Trenera</h2>
-    </div>
-    <div class="trainerForm">
 
-       <!-- <div>
-            <form action="#" th:action="@{/addTrainer}" th:object="${trainer}" method="post">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Name
-                    <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="lukas"></label>
-                </div>
+        <div class="trainerForm" align="left" >
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Last name
-                    <input type="lastName" class="form-control" id="exampleFormControlInput2" placeholder="wieczorkiewicz"></label>
-                </div>
+            <form action="#" th:action="@{/saveTrainer}" th:object="${trainers}" method="post">
+                <input type="text" th:field = "*{firstName}" placeholder="First name" class="form-control">
+                <input type="text" th:field = "*{lastName}" placeholder="Last name" class="form-control">
+                <input type="text" th:field = "*{email}" placeholder="Email" class="form-control">
+                <input type="number" th:field = "*{phoneNumber}" placeholder="Phone number" class="form-control">
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address
-                    <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com"></label>
-                </div>
+                <button type="submit" class="btn btn-primary"> Save Trainer</button>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Phone number
-                    <input type="phoneNumber" class="form-control" id="exampleFormControlInput4" placeholder="123 123 123"></label>
-                </div>
-
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Add Trainer</button>
-                </div>
             </form>
-        </div>-->
-
-        <form th:action="@{/addTrainer}" th:object="${trainers}" method="post">
-            <table>
-                <tr>
-                    <td>Name: </td>
-                    <td><input type="text" th:field="*{name}" ></td>
-
-                </tr>
-
-                <tr>
-                    <td>Last name: </td>
-                    <td><input type="text" th:field="*{lastName}" ></td>
-
-                </tr>
-
-                <tr>
-                    <td>Email: </td>
-                    <td><input type="text" th:field="*{email}" ></td>
-                    <td><span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> </span></td>
-                </tr>
-
-                <tr>
-                    <td>Phone number: </td>
-                    <td><input type="number" th:field="*{phoneNumber}" ></td>
-
-                </tr>
-
-                <tr>
-                    <td><input type="submit" value="Wyslij"></td>
-                </tr>
-            </table>
-        </form>
 
 
-
-
+        </div>
     </div>
+
 
 </section>
 
-<footer class="footer">
+<!--<footer class="footer">
     <div class="container">
         <p>&copy; infoShare</p>
     </div>
-</footer>
+</footer>-->
 
 </body>
 </html>

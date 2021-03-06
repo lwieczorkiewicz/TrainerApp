@@ -19,45 +19,40 @@
 <nav class="nav">
     <div class="container">
         <ul>
-            <li><a th:href="@{/allTrainers}">Lista Trenerów</a></li>
-            <li><a th:href="@{/addTrainer}">Dodaj Trenera</a></li>
+            <li><a th:href="@{/allTrainers}">Trainers List</a></li>
+            <li><a th:href="@{/addTrainerForm}">Add Trainer</a></li>
             <li><a th:href="@{/updateTrainer}">Edytuj Trenera</a></li>
             <li><a th:href="@{/contact}">Trenerzy</a></li>
 
         </ul>
     </div>
 </nav>
-<section class="section" id="o-mnie" >
+<section class="section" id="o-mnie">
     <div class="container" align="center">
         <h2>Lista wszystkich trenerów infoShare</h2>
+
     </div>
     <div align="center" class="container my-3">
 
-        <table class="table table-striped table-hover" >
+
+        <table class="table table-striped table-hover">
             <thead align="center">
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                </tr>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+            </tr>
             </thead>
             <tbody align="center">
-                <tr th:each="trainers : ${listTrainers}">
-                    <td th:text="${trainers.firstName}"/>
-                    <td th:text="${trainers.lastName}"/>
-                    <td th:text="${trainers.email}"/>
-                    <td th:text="${trainers.phoneNumber}"/>
-                </tr>
-
+            <tr th:each="trainers : ${listTrainers}">
+                <td th:text="${trainers.firstName}"/>
+                <td th:text="${trainers.lastName}"/>
+                <td th:text="${trainers.email}"/>
+                <td th:text="${trainers.phoneNumber}"/>
+            </tr>
             </tbody>
-
-
         </table>
-
-
-
-
     </div>
 </section>
 

@@ -76,11 +76,9 @@ body {
 
 .trainerForm {
 
-       max-width: 1000px;
-       	margin-left: auto;
-       	margin-right: auto;
-       	padding-left: 15px;
-       	padding-right: 15px;
+       max-width: 500px;
+
+
 }
 
 .footer {

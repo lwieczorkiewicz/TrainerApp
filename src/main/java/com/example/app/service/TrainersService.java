@@ -1,6 +1,5 @@
 package com.example.app.service;
 
-
 import com.example.app.dto.TrainersDto;
 import com.example.app.repositories.TrainersRepositories;
 import com.example.app.model.Trainers;
@@ -15,13 +14,21 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TrainersService implements TrainerService{
 
-  //  private final TrainersDao trainersDao;
-
     @Autowired
     private TrainersRepositories trainersRepositories;
 
+    @Override
+    public List<Trainers> getAllTrainers() {
+        return trainersRepositories.findAll();
+    }
 
-    @Transactional
+    @Override
+    public void saveTrainer(Trainers trainers) {
+        this.trainersRepositories.save(trainers);
+    }
+
+
+   /* @Transactional
     public TrainersDto saveTrainers(TrainersDto trainersDto){
 
         Trainers trainers = new Trainers(trainersDto.getName(), trainersDto.getLastName(),
@@ -31,10 +38,5 @@ public class TrainersService implements TrainerService{
 
         return  new TrainersDto(savedTrainers.getId(), savedTrainers.getFirstName(), savedTrainers.getLastName(),
                 savedTrainers.getEmail(), savedTrainers.getPhoneNumber());
-    }
-
-    @Override
-    public List<Trainers> getAllTrainers() {
-        return trainersRepositories.findAll();
-    }
+    }*/
 }
