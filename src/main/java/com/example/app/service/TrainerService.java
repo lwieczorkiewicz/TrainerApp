@@ -1,9 +1,8 @@
 package com.example.app.service;
 
-import com.example.app.users.Trainers;
+import com.example.app.model.Trainers;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface TrainerService {
 
@@ -11,5 +10,4 @@ public interface TrainerService {
 
     void saveTrainer(Trainers trainers);
 
-    Trainers getTrainersById(UUID id);
 }
