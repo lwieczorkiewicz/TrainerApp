@@ -1,10 +1,12 @@
 package com.example.app.service;
 
+import com.example.app.dto.TrainersDto;
 import com.example.app.model.Trainers;
 import com.example.app.repositories.TrainersRepositories;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -44,5 +46,17 @@ public class TrainersService implements TrainerService {
     @Override
     public void deleteTrainerById(UUID id) {
         this.trainersRepositories.deleteById(id);
+    }
+
+    @Transactional
+    public TrainersDto saveTrainers(TrainersDto trainersDto){
+
+        Trainers trainers = new Trainers(trainersDto.getName(), trainersDto.getLastName(),
+                trainersDto.getEmail(), trainersDto.getPhoneNumber());
+
+        Trainers savedTrainers = trainersRepositories.save(trainers);
+
+        return  new TrainersDto(savedTrainers.getId(), savedTrainers.getFirstName(), savedTrainers.getLastName(),
+                savedTrainers.getEmail(), savedTrainers.getPhoneNumber());
     }
 }
