@@ -92,5 +92,17 @@ body {
     margin-top:40px;
 }
 
+.errorFont {
+    width: 500px;
+    color: red;
+    background: #80ff00;
+    font-style: italic;
+
+}
+
+.row_space {
+    row_space:10px;
+}
+
 
 
