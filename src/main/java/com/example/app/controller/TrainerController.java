@@ -31,7 +31,7 @@ public class TrainerController {
     }
 
     @GetMapping("/allTrainers")
-    public String showHomePage(Model model) {
+    public String showAllTrainers(Model model) {
         model.addAttribute("listTrainers", trainersService.getAllTrainers());
         return "allTrainers";
     }
