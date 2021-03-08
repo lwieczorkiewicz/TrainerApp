@@ -27,14 +27,14 @@
         </ul>
     </div>
 </nav>
-<section class="section" id="o-mnie">
+<section class="section_list" id="o-mnie">
     <div class="container" align="center">
         <h2>Lista wszystkich trenerów infoShare</h2>
 
     </div>
     <div align="center" class="container my-3">
 
-        <table class="table table-hover">
+        <table class="table table-hovers">
             <thead align="center">
             <tr>
                 <th>First Name</th>
@@ -51,8 +51,8 @@
                 <td th:text="${trainers.email}"/>
                 <td th:text="${trainers.phoneNumber}"/>
                 <td>
-                    <a th:href="@{/updateForm/{id}(id=${trainers.id})}" class="btn btn-warning">Update</a>
-                    <a th:href="@{/deleteTrainers/{id}(id=${trainers.id})}" class="btn btn-danger">Delete</a>
+                    <span><a th:href="@{/updateForm/{id}(id=${trainers.id})}" class="btn btn-warning">Update</a></span>
+                    <span><a th:href="@{/deleteTrainers/{id}(id=${trainers.id})}" class="btn btn-danger">Delete</a></span>
                 </td>
             </tr>
 

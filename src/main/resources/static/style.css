@@ -51,7 +51,7 @@ body {
 			.nav a {
 				display: block;
 				text-align: center;
-				text-size:8;
+				text-size:10;
 				color: #fff;
 				text-decoration: none;
 			}
@@ -61,6 +61,12 @@ body {
 				}
 
 .section {
+    margin-left: 650px;
+    margin-right: 200px;
+	padding: 70px 0;
+	text-align: justify;
+}
+.section_list {
     margin-left: 200px;
     margin-right: 200px;
 	padding: 70px 0;
@@ -76,7 +82,7 @@ body {
 	}
 
 .trainerForm {
-    max-width: 500px;
+    max-width: 650px;
 }
 
 .footer {
@@ -103,6 +109,7 @@ body {
 .row_space {
     row_space:10px;
 }
+
 
 
 
