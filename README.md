@@ -11,6 +11,7 @@ Widoki dzialajacej aplikacji:
 ---
 
 
+
 ![Lista_trenerow](./src/main/resources/static/lista_trenerow.png "Lista Trenerow")
 
 
@@ -18,6 +19,7 @@ Widoki dzialajacej aplikacji:
 
 
 ![Formularz_dodawania](./src/main/resources/static/formularz_dodawania.png "Formularz dodawania trenera")
+
 
 
 ---
